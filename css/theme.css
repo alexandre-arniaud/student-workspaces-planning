@@ -14,6 +14,7 @@
   --top-height-day: 86px;
   --left-width-hours: 97px;
   --border-size: 8px;
+  --fifteen_minutes: 107.5px;
 }
 
 /*
@@ -34,6 +35,43 @@ body {
 SCHEDULE
 
 */
+
+section.cd-schedule__classes__1h45 {
+	width: var(--main-width-class);
+	height: calc(1.75 * var(--main-height-1h));
+
+	background-color: #F5E670;
+  border-radius: 10px;
+
+  position: relative;
+	left: var(--left-width-hours);
+  margin-top: var(--fifteen_minutes);
+
+  border-left-style: solid;
+	border-color: #F2CF4E;
+  border-left-width: var(--border-size);
+
+  font-family: MarianneBOLD;
+}
+
+#hour p {
+  font-size: 18px;
+  position: relative;
+  top: 16px;
+  left: 13px;
+}
+
+#module p {
+  font-size: 30px;
+}
+
+#professor p {
+  font-size: 20px;
+}
+
+#room p {
+  font-size: 15px;
+}
 
 section.cd-schedule__classes__2h {
 	width: var(--main-width-class);
@@ -82,7 +120,7 @@ section.cd-schedule__classes__4h {
 
   position: relative;
 	left: var(--left-width-hours);
-	top: calc(var(--top-height-day) + 3 * var(--main-height-1h));
+	top: var(--main-height-1h);
 
   border-left-style: solid;
   border-left-width: var(--border-size);
