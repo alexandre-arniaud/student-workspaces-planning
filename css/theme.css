@@ -1,0 +1,110 @@
+@font-face {
+        font-family : MarianneBOLD;
+        src : url(../font/marianne-bold-webfont.ttf);
+}
+
+@font-face {
+        font-family : Marianne;
+        src : url(../font/marianne-regular-webfont.ttf);
+}
+
+:root {
+  --main-width-class: 294.5px;
+  --main-height-1h: 93px;
+  --top-height-day: 86px;
+  --left-width-hours: 97px;
+  --border-size: 8px;
+}
+
+/*
+
+BACKGROUND
+
+*/
+
+body {
+  background-image: url(../assets/background.png);
+  width: 1920px;
+	height: 1080px;
+  background-repeat: no-repeat;
+}
+
+/*
+
+SCHEDULE
+
+*/
+
+section.cd-schedule__classes__2h {
+	width: var(--main-width-class);
+	height: calc(2 * var(--main-height-1h));
+
+	background-color: #F5A470;
+  border-radius: 10px;
+
+  position: relative;
+	left: var(--left-width-hours);
+  top: calc(var(--top-height-day));
+
+  border-left-style: solid;
+	border-color: #EE8D4E;
+  border-left-width: var(--border-size);
+
+  font-family: MarianneBOLD;
+}
+
+#hour p {
+  font-size: 18px;
+  position: relative;
+  top: 16px;
+  left: 13px;
+}
+
+#module p {
+  font-size: 30px;
+}
+
+#professor p {
+  font-size: 20px;
+}
+
+#room p {
+  font-size: 15px;
+}
+
+
+section.cd-schedule__classes__4h {
+	width: var(--main-width-class);
+	height: calc(4 * var(--main-height-1h));
+
+	background-color: #C6F570;
+  border-radius: 10px;
+
+  position: relative;
+	left: var(--left-width-hours);
+	top: calc(var(--top-height-day) + 3 * var(--main-height-1h));
+
+  border-left-style: solid;
+  border-left-width: var(--border-size);
+	border-color: #87F24E;
+
+  font-family: MarianneBOLD;
+}
+
+#hour p {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-left: 13px;
+}
+
+#module p {
+  font-size: 30px;
+}
+
+#professor p {
+  font-size: 20px;
+}
+
+#room p {
+  font-size: 15px;
+}
