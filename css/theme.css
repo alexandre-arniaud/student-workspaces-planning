@@ -179,7 +179,7 @@ SCHEDULE | BLOC FÉRIÉ
 #cd-schedule__ferie {
 
   position: absolute;
-  left: calc((2 * var(--main-width-class)) + var(--left-width-hours)); /* 2 car on veut sauter les 2 premiers jours étant donné que mercredi est le 3ème de la semaine */
+  left: calc(2 * var(--main-width-class) + var(--left-width-hours) + 2 * var(--border-size)); /* 2 car on veut sauter les 2 premiers jours étant donné que mercredi est le 3ème de la semaine */
   top: var(--top-height-day);
 
 }
