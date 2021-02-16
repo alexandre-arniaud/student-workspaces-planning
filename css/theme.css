@@ -1,11 +1,11 @@
 @font-face {
-        font-family : MarianneBOLD;
+        font-family: MarianneBOLD;
         src : url(../font/marianne-bold-webfont.ttf);
 }
 
 @font-face {
-        font-family : Marianne;
-        src : url(../font/marianne-regular-webfont.ttf);
+        font-family: Marianne;
+        src: url(../font/marianne-regular-webfont.ttf);
 }
 
 :root {
@@ -29,170 +29,80 @@ body {
   background-repeat: no-repeat;
 }
 
-/*
+.block {
+    border-left-style: solid;
+  	border-color: #F2CF4E;
+    border-left-width: var(--border-size);
 
-SCHEDULE | BLOC DE 1H45
+    font-family: MarianneBOLD;
 
-*/
+    background-color: #F5E670;
+    border-radius: 10px;
 
-section.cd-schedule__classes__1h45 {
-	width: var(--main-width-class);
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    left: var(--left-width-hours);
+    width: var(--main-width-class);
+}
+
+.block > *:first-child {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.block > *:last-child {
+  margin-bottom: 1em;
+}
+
+.block > p#hour {
+  font-family: 'Marianne';
+}
+
+.block > p#module {
+  font-size: x-large;
+}
+
+.block * {
+  margin-left: 0.7rem;
+}
+
+/* SCHEDULE | BLOC DE 1H45 */
+section.block.class-1h45 {
 	height: calc(1.75 * var(--main-height-1h));
-
-	background-color: #F5E670;
-  border-radius: 10px;
-
-  position: absolute;
-	left: var(--left-width-hours);
   top: calc(3.5 * var(--main-height-1h)); /* 3.5 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
-
-  border-left-style: solid;
-	border-color: #F2CF4E;
-  border-left-width: var(--border-size);
-
-  font-family: MarianneBOLD;
 }
 
-#hour {
-  font-size: 18px;
-
-  position: absolute;
-  top: 16px;
-  left: 13px;
-}
-
-#module {
-  font-size: 30px;
-
-  position: absolute;
-  top: 62px;
-  left: 13px;
-}
-
-#professor {
-  font-size: 20px;
-
-  position: absolute;
-  top: 85.5px;
-  left: 13px;
-}
-
-#room {
-  font-size: 15px;
-
-  position: absolute;
-  top: 145px;
-  left: 13px;
-}
-
-/*
-
-SCHEDULE | BLOC DE 2H
-
-*/
-
-section.cd-schedule__classes__2h {
-	width: var(--main-width-class);
-	height: calc(2 * var(--main-height-1h));
-
-	background-color: #F5A470;
-  border-radius: 10px;
-
-  position: absolute;
-	left: var(--left-width-hours);
+/* SCHEDULE | BLOC DE 2H */
+section.class-2h {
+  height: calc(2 * var(--main-height-1h));
   top: calc(1.25 * var(--top-height-day)); /* 1.25 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
 
-  border-left-style: solid;
+	background-color: #F5A470;
 	border-color: #EE8D4E;
-  border-left-width: var(--border-size);
-
-  font-family: MarianneBOLD;
-}
-
-section#hour {
-  font-size: 18px;
-  position: relative;
-  top: 16px;
-  left: 13px;
-}
-
-section#module {
-  font-size: 30px;
-  position: relative;
-  top: 62px;
-  left: 13px;
-}
-
-section#professor {
-  font-size: 20px;
-  position: relative;
-  top: 85.5px;
-  left: 13px;
-}
-
-section#room {
-  font-size: 15px;
-  position: relative;
-  top: 145px;
-  left: 13px;
 }
 
 section p {
   margin: 0em;
 }
 
-/*
+/* SCHEDULE | BLOC DE 4H */
 
-SCHEDULE | BLOC DE 4H
-
-*/
-
-section.cd-schedule__classes__4h {
-	width: var(--main-width-class);
+section.class-4h {
 	height: calc(4 * var(--main-height-1h));
+  top: calc(6.5 * var(--main-height-1h)) ; /* 6.5 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
 
 	background-color: #C6F570;
-  border-radius: 10px;
-
-  position: absolute;
-	left: var(--left-width-hours);
-	top: calc(6.5 * var(--main-height-1h)) ; /* 6.5 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
-
-  border-left-style: solid;
-  border-left-width: var(--border-size);
-	border-color: #87F24E;
-
-  font-family: MarianneBOLD;
+  border-color: #87F24E;
 }
 
-#hour {
-  font-size: 18px;
-  margin-top: 16px;
-  margin-left: 13px;
-}
+/* SCHEDULE | BLOC FÉRIÉ */
 
-#module {
-  font-size: 30px;
-}
-
-#professor {
-  font-size: 20px;
-}
-
-#room {
-  font-size: 15px;
-}
-
-/*
-
-SCHEDULE | BLOC FÉRIÉ
-
-*/
-
-#cd-schedule__ferie {
-
+section.class-ferie {
   position: absolute;
   left: calc(2 * var(--main-width-class) + var(--left-width-hours) + 2 * var(--border-size)); /* 2 car on veut sauter les 2 premiers jours étant donné que mercredi est le 3ème de la semaine */
   top: var(--top-height-day);
-
 }
