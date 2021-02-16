@@ -109,23 +109,36 @@ section.cd-schedule__classes__2h {
   font-family: MarianneBOLD;
 }
 
-#hour {
+section#hour {
   font-size: 18px;
   position: relative;
   top: 16px;
   left: 13px;
 }
 
-#module {
+section#module {
   font-size: 30px;
+  position: relative;
+  top: 62px;
+  left: 13px;
 }
 
-#professor {
+section#professor {
   font-size: 20px;
+  position: relative;
+  top: 85.5px;
+  left: 13px;
 }
 
-#room {
+section#room {
   font-size: 15px;
+  position: relative;
+  top: 145px;
+  left: 13px;
+}
+
+section p {
+  margin: 0em;
 }
 
 /*
