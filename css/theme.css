@@ -14,6 +14,29 @@
   --top-height-day: 89px; /* Hauteur correspondant à l'espace des jours de la semaine */
   --left-width-hours: 105px; /* Largueur correspondant à l'espace des horaires en prenant en compte la bordure des blocs cours */
   --border-size: 8px; /* Taille de la bordure des cours */
+
+  /* Codes couleurs backgrounds */
+  --color-back-1: #F5A470;
+  --color-back-2: #F5E670;
+  --color-back-3: #C6F570;
+  --color-back-4: #F57070;
+  --color-back-5: #70F5B7;
+  --color-back-6: #7093F5;
+  --color-back-7: #70DAF5;
+  --color-back-8: #a15b47;
+  --color-back-9: #8047a1;
+
+
+  /* Codes couleurs borders */
+  --color-bord-1: #EE8D4E;
+  --color-bord-2: #F2CF4E;
+  --color-bord-3: #87F24E;
+  --color-bord-4: #EE4E4E;
+  --color-bord-5: #4EEEB3;
+  --color-bord-6: #4E8EEE;
+  --color-bord-7: #4ED3EE;
+  --color-bord-8: #8f4c38;
+  --color-bord-9: #5f47a1;
 }
 
 /*
@@ -27,23 +50,28 @@ body {
   width: 1920px;
 	height: 1080px;
   background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.grid > section {
+    display: grid;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-template-columns: 105px 302.5px 302.5px 302.5px 302.5px 302.5px 302.5px;
+    grid-template-rows: 86px 90.4px 90.4px 90.4px 90.4px 90.4px 90.4px 90.4px 90.4px 90.4px 90.4px 90.4px;
+    ;
 }
 
 .block {
-    border-left-style: solid;
-  	border-color: #F2CF4E;
-    border-left-width: var(--border-size);
+  	background-color: var(--color-back-2);
 
     font-family: MarianneBOLD;
 
-    background-color: #F5E670;
+    border-color: var(--color-bord-2);
     border-radius: 10px;
-
-    position: absolute;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-left-style: solid;
+    border-left-width: var(--border-size);
 
     left: var(--left-width-hours);
     width: var(--main-width-class);
@@ -71,18 +99,26 @@ body {
 }
 
 /* SCHEDULE | BLOC DE 1H45 */
+
 section.block.class-1h45 {
 	height: calc(1.75 * var(--main-height-1h));
   top: calc(3.5 * var(--main-height-1h)); /* 3.5 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
+  
+  display: grid;
+  position: sticky;
 }
 
 /* SCHEDULE | BLOC DE 2H */
-section.class-2h {
+
+section.block.class-2h {
   height: calc(2 * var(--main-height-1h));
   top: calc(1.25 * var(--top-height-day)); /* 1.25 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
 
-	background-color: #F5A470;
-	border-color: #EE8D4E;
+	background-color: var(--color-back-1);
+	border-color: var(--color-bord-1);
+
+  display: grid;
+  position: sticky;
 }
 
 section p {
@@ -91,18 +127,23 @@ section p {
 
 /* SCHEDULE | BLOC DE 4H */
 
-section.class-4h {
+section.block.class-4h {
 	height: calc(4 * var(--main-height-1h));
   top: calc(6.5 * var(--main-height-1h)) ; /* 6.5 correspond au nombre de fois qu'il y a 1h a partir de 8h plus l'espace des jours de la semaine qui est de la même hauteur */
 
-	background-color: #C6F570;
-  border-color: #87F24E;
+	background-color: var(--color-back-3);
+  border-color: var(--color-bord-3);
+
+  display: grid;
+  position: sticky;
 }
 
 /* SCHEDULE | BLOC FÉRIÉ */
 
-section.class-ferie {
-  position: absolute;
+section.block.class-ferie {
   left: calc(2 * var(--main-width-class) + var(--left-width-hours) + 2 * var(--border-size)); /* 2 car on veut sauter les 2 premiers jours étant donné que mercredi est le 3ème de la semaine */
   top: var(--top-height-day);
+
+  display: grid;
+  position: sticky;
 }
